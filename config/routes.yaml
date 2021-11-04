@@ -1,3 +1,0 @@
-app_redirect_index:
-    path: /redirect
-    controller: App\Controller\RedirectController::index

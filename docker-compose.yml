@@ -16,8 +16,8 @@ services:
       - ./config/nginx/ssl:/etc/nginx/ssl:ro
       - ./:/var/www/project:ro
     ports:
-      - 80:80
-      - 443:443
+      - 8081:80
+      - 444:443
     networks:
       - back
 
