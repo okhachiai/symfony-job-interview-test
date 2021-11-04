@@ -4,12 +4,13 @@ namespace App\Controller;
 use App\Entity\Uri;
 use App\Repository\UriRepository;
 use Doctrine\DBAL\Driver\Connection;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
-class RedirectController
+class RedirectController extends Controller
 {
     /**
      * @Route("redirect", name="app_redirect_index", methods={"GET"})
@@ -28,7 +29,8 @@ class RedirectController
         }
         $uri->setTimesUsed($uri->getTimesUsed() + 1);
         $uriRepository->incrementTimesUsed($uri);
-        return new RedirectResponse($uri->getUrl());
+
+        return $this->redirect($uri->getUrl());
     }
 
     /*
