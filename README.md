@@ -32,3 +32,4 @@ Go to https://127.0.0.1/redirect?token=some_token
 
 #Bonus
 - I added a make file in order to simplify the execution of the symfony commandes inside the docker containers.
+
